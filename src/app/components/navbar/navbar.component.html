@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+<!-- navbar.component.html -->
+<div class="bg-blue-200 sticky h-full top-0 flex flex-column justify-content-center py-3">
+    <div class="flex justify-content-around align-items-center px-3">
+        <p class="text-2xl font-semibold">Angular Demo</p>
+
+        @if (isMenuVisible) {
+            <i class="pi pi-times md:hidden cursor-pointer" (click)="toggleMenu()"></i>
+        } @else {
+            <i class="pi pi-bars md:hidden cursor-pointer" (click)="toggleMenu()"></i>
+        }
+    
+        <div class="hidden gap-3 md:flex">
+            <button class="p-2 bg-blue-500 text-white" pButton>Create Blog</button>
+            <button class="p-2 bg-blue-500 text-white" pButton>Logout</button>
+        </div>
+    </div>
+    
+    <div class="flex flex-column gap-3 md:hidden mt-3 px-4" *ngIf="isMenuVisible">
+        <button class="p-2 border-none hover:bg-blue-300" pButton>Create Blog</button>
+        <button class="p-2 border-none hover:bg-blue-300" pButton>Logout</button>
+    </div>
+</div>
