@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CardModule, FormsModule, InputTextModule, RouterLink],
   templateUrl: './sign-up.component.html'
 })
 export class SignUpComponent {
